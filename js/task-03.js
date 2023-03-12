@@ -13,22 +13,42 @@ const images = [
   },
 ];
 
+// const list = document.querySelector(".gallery");
+
+// const markup = images
+//   .map(
+//     (image) =>
+//       `<li><img class="picture" src=${image.url} width = '300' alt='${image.alt}'></img></li>`
+//   )
+//   .join("");
+
+// list.insertAdjacentHTML("beforeend", markup);
+
+// const pictures = document.querySelectorAll(".picture");
+
+// list.style.display = "flex";
+// list.style.flexWrap = "column";
+// list.style.listStyle = "none";
+// list.style.justifyContent = "centr";
+// list.style.alignItem = "centr";
+// console.log(list);
+
 const list = document.querySelector(".gallery");
 
-const markup = images
+const galImg = images
   .map(
     (image) =>
-      `<li><img class="picture" src=${image.url} width = '300' alt='${image.alt}'></img></li>`
+      `<li class='item'><img class='pict' src='${image.url}' alt='${image.alt}' width='250'></img></li>`
   )
   .join("");
 
-list.insertAdjacentHTML("beforeend", markup);
-
-const pictures = document.querySelectorAll(".picture");
-
+list.insertAdjacentHTML("beforeend", galImg);
 list.style.display = "flex";
-list.style.flexWrap = "column";
-list.style.listStyle = "none";
-list.style.justifyContent = "centr";
-list.style.alignItem = "centr";
-console.log(list);
+
+const items = document.querySelectorAll(".item");
+
+items.forEach((item) => {
+  item.style.border = "4px solid red";
+  item.style.listStyle = "none";
+  item.style.margin = "10px";
+});
